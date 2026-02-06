@@ -44,7 +44,7 @@ def create_multiple_choice(correct_term, correct_definition, all_terms):
     wrong_terms = random.sample(other_terms, 3)
     
     # Get their definitions (they're just strings now!)
-    wrong_definitions = [all_terms[t] for t in wrong_terms]  # ← Changed this line!
+    wrong_definitions = [all_terms[t] for t in wrong_terms]  
     
     # Combine correct + wrong
     all_choices = [correct_definition] + wrong_definitions
@@ -59,7 +59,6 @@ def create_multiple_choice(correct_term, correct_definition, all_terms):
 
 # Quiz loop
 for i, (term, correct_definition) in enumerate(quiz_terms, 1):
-    # correct_definition is already the string!
     
     print(f"\n{'='*50}")
     print(f"QUESTION {i} of {num_questions}")
@@ -106,4 +105,5 @@ else:
 if wrong_list:
     print("\nTerms to review:")
     for term in wrong_list:
+
         print(f"  - {term}")
